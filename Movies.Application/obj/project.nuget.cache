@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BxUY6F+AdZY=",
+  "dgSpecHash": "Qhgquww5G38=",
   "success": true,
   "projectFilePath": "C:\\Users\\ni_o0\\proyectos\\moviesAPI_DotNet\\moviesAPI\\Movies.Application\\Movies.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ni_o0\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0-preview.7.25380.108\\microsoft.extensions.dependencyinjection.abstractions.10.0.0-preview.7.25380.108.nupkg.sha512"
+  ],
   "logs": []
 }
