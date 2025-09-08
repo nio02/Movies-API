@@ -1,5 +1,4 @@
 using Movies.Application;
-using Movies.Application.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,9 +19,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllers();
 
