@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "5RdQzOZkRCM=",
+  "dgSpecHash": "iRPiDqmgivg=",
   "success": true,
   "projectFilePath": "C:\\Users\\ni_o0\\proyectos\\moviesAPI_DotNet\\moviesAPI\\Movies.Api\\Movies.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ni_o0\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\ni_o0\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
     "C:\\Users\\ni_o0\\.nuget\\packages\\microsoft.extensions.apidescription.server\\9.0.0\\microsoft.extensions.apidescription.server.9.0.0.nupkg.sha512",
     "C:\\Users\\ni_o0\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0-preview.7.25380.108\\microsoft.extensions.dependencyinjection.abstractions.10.0.0-preview.7.25380.108.nupkg.sha512",
+    "C:\\Users\\ni_o0\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
     "C:\\Users\\ni_o0\\.nuget\\packages\\microsoft.openapi\\1.6.25\\microsoft.openapi.1.6.25.nupkg.sha512",
+    "C:\\Users\\ni_o0\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\ni_o0\\.nuget\\packages\\swashbuckle.aspnetcore\\9.0.4\\swashbuckle.aspnetcore.9.0.4.nupkg.sha512",
     "C:\\Users\\ni_o0\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\9.0.4\\swashbuckle.aspnetcore.swagger.9.0.4.nupkg.sha512",
     "C:\\Users\\ni_o0\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\9.0.4\\swashbuckle.aspnetcore.swaggergen.9.0.4.nupkg.sha512",

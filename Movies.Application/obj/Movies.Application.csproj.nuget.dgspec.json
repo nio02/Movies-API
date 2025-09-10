@@ -50,9 +50,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[10.0.0-preview.7.25380.108, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
             }
           },
           "imports": [
