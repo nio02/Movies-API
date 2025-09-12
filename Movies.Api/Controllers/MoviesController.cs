@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Movies.Api.Auth;
 using Movies.Api.Mapping;
 using Movies.Application.Services;
 using Movies.Contracts.Requests;
@@ -21,8 +22,10 @@ public class MoviesController : ControllerBase
     public async Task<IActionResult> Create([FromBody] CreateMovieRequest request,
         CancellationToken token)
     {
+        var userId = HttpContext.GetUserId();
+        
         var movie = request.MapToMovie();
-        await _movieService.CreateAsync(movie, token);
+        await _movieService.CreateAsync(movie, token, userId);
         return CreatedAtAction(nameof(Get), new { idOrSlug = movie.Id}, movie);
     }
 
@@ -57,8 +60,9 @@ public class MoviesController : ControllerBase
     public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateMovieRequest request,
         CancellationToken token)
     {
+        var userId = HttpContext.GetUserId();
         var movie = request.MapToMovie(id);
-        var updatedMovie = await _movieService.UpdateAsync(movie, token);
+        var updatedMovie = await _movieService.UpdateAsync(movie, token, userId);
 
         if (updatedMovie is null)
         {
@@ -74,7 +78,8 @@ public class MoviesController : ControllerBase
     public async Task<IActionResult> Delete([FromRoute] Guid id,
         CancellationToken token)
     {
-        var deleted = await _movieService.DeleteByIdAsync(id, token);
+        var userId = HttpContext.GetUserId();
+        var deleted = await _movieService.DeleteByIdAsync(id, token, userId);
         if (!deleted)
         {
             return NotFound();
