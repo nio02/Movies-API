@@ -23,17 +23,17 @@ public class MovieService : IMovieService
 
     public Task<Movie?> GetByIdAsync(Guid id, CancellationToken token = default, Guid? userId = default)
     {
-        return _movieRepository.GetByIdAsync(id, token);
+        return _movieRepository.GetByIdAsync(id, token, userId);
     }
 
     public Task<Movie?> GetBySlugAsync(string slug, CancellationToken token = default, Guid? userId = default)
     {
-        return _movieRepository.GetBySlugAsync(slug, token);
+        return _movieRepository.GetBySlugAsync(slug, token, userId);
     }
 
     public Task<IEnumerable<Movie>> GetAllAsync(CancellationToken token = default, Guid? userId = default)
     {
-        return _movieRepository.GetAllAsync(token);
+        return _movieRepository.GetAllAsync(token, userId);
     }
 
     public async Task<Movie?> UpdateAsync(Movie movie, CancellationToken token = default, Guid? userId = default)
