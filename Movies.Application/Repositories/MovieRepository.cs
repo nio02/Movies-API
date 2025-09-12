@@ -117,9 +117,9 @@ public class MovieRepository : IMovieRepository
             left join genres g on m.id = g.movieid
             left join ratings r on m.id = r.movieid
             left join ratings myr on m.id = myr.movieid
-                and myr.userid = @userid
-            group by id
-            """, cancellationToken: token));
+                and myr.userid = @userId
+            group by id, userrating
+            """, new { userId }, cancellationToken: token));
 
         return result.Select(x => new Movie
         {
