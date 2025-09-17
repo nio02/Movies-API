@@ -55,7 +55,18 @@ builder.Services.AddApiVersioning(x =>
     options.GroupNameFormat = "'v'VVV";
 });
 
-builder.Services.AddResponseCaching();
+//builder.Services.AddResponseCaching();
+builder.Services.AddOutputCache(x =>
+{
+    x.AddBasePolicy(c => c.Cache());
+    x.AddPolicy("MovieCache", c =>
+    {
+        c.Cache()
+            .Expire(TimeSpan.FromMinutes(1))
+            .SetVaryByQuery(["title", "year", "sortBy", "page", "pageSize"])
+            .Tag("movies");
+    });
+});
 
 builder.Services.AddControllers();
 
@@ -91,7 +102,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseResponseCaching();
+//app.UseResponseCaching();
+app.UseOutputCache();
 
 app.UseMiddleware<ValidationMappingMiddleware>();
 app.MapControllers();
