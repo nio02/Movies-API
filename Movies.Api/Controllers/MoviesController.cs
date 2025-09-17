@@ -99,13 +99,14 @@ public class MoviesController : ControllerBase
         return Ok(response);
     }
     
-    [Authorize(AuthConstants.TrustedMemberPolicyName)]
+    [Authorize(AuthConstants.AdminUserPolicyName)]
     [HttpDelete(ApiEndpoints.Movies.Delete)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete([FromRoute] Guid id,
         CancellationToken token)
     {
+        var userId = HttpContext.GetUserId(); 
         var deleted = await _movieService.DeleteByIdAsync(id, token);
         if (!deleted)
         {
